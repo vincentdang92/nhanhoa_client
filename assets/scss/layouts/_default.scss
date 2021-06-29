@@ -1,26 +1,26 @@
-@font-face {
-  font-family: 'SFProDisplayMedium';
-  src: url("~/assets/fonts/SFProDisplay/SF-Pro-Display-Medium.otf") format("opentype");
-}
-@font-face {
-  font-family: 'SFProDisplayHeavy';
-  src: url("~/assets/fonts/SFProDisplay/SF-Pro-Display-Heavy.otf") format("opentype");
-}
+// @font-face {
+//   font-family: 'SFProDisplayMedium';
+//   src: url("~/assets/fonts/SFProDisplay/SF-Pro-Display-Medium.otf") format("opentype");
+// }
+// @font-face {
+//   font-family: 'SFProDisplayHeavy';
+//   src: url("~/assets/fonts/SFProDisplay/SF-Pro-Display-Heavy.otf") format("opentype");
+// }
 
-@font-face {
-  font-family: 'SFProDisplaySemiBold';
-  src: url("~/assets/fonts/SFProDisplay/SF-Pro-Display-Semibold.otf") format("opentype");
-}
-@font-face {
-  font-family: 'SFProDisplayRegular';
-  src: url("~/assets/fonts/SFProDisplay/SF-Pro-Display-Regular.otf") format("opentype");
-}
-@font-face {
-  font-family: 'SFProDisplayBold';
-  src: url("~/assets/fonts/SFProDisplay/SF-Pro-Display-Bold.otf") format("opentype");
-}
+// @font-face {
+//   font-family: 'SFProDisplaySemiBold';
+//   src: url("~/assets/fonts/SFProDisplay/SF-Pro-Display-Semibold.otf") format("opentype");
+// }
+// @font-face {
+//   font-family: 'SFProDisplayRegular';
+//   src: url("~/assets/fonts/SFProDisplay/SF-Pro-Display-Regular.otf") format("opentype");
+// }
+// @font-face {
+//   font-family: 'SFProDisplayBold';
+//   src: url("~/assets/fonts/SFProDisplay/SF-Pro-Display-Bold.otf") format("opentype");
+// }
 *{
-  font-family: 'SFProDisplayRegular', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   font-weight: 500;
   
@@ -74,10 +74,17 @@
     .ant-menu-item, .ant-menu-submenu{
       margin:5px 0 !important;
       width: 100% !important;
+      padding: 0 !important;
       text-align: center;
+      
       i{
         font-size: 25px !important;
         margin: 0 !important;
+        vertical-align: middle;
+      }
+      .ant-menu-submenu-title{
+        padding: 0 !important;
+        line-height: 50px;
       }
     }
   }
@@ -89,19 +96,22 @@
     .ant-menu{
       .ant-menu-item, .ant-menu-submenu{
         height: 50px;
-        line-height: 50px;
+        // line-height: 50px;
         border-radius: 5px;
         margin: 10px;
         width: calc(100% - 20px);
         white-space: nowrap;
+        line-height: 50px;
         span{
-          font-size: 18px;
+          font-size: 16px;
           transition: all .2s ease-in-out;
+          vertical-align: middle;
         }
         i{
           font-size: 18px;
           margin-right: 10px;
           transition: all .2s ease-in-out;
+          vertical-align: middle;
         }
         &:hover:not(.ant-menu-item-selected){
           background-color: #a6e7ef;
@@ -131,14 +141,13 @@
 .the-header__user{
   a{
     img{
-      
       width: 35px;
       border-radius: 50%;
     }
   }
   .welcome_name {
     color: #fff;
-    font-size: 18px;
+    font-size: 16px;
     margin-right: 16px;
   }
 }

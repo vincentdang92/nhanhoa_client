@@ -5,7 +5,7 @@
       <TheHeader>
         <a-icon
           class="trigger"
-          :type="collapsed ? 'menu-unfold' : 'menu-fold'"
+          :type="collapsed ? 'bars' : 'bars'"
           @click="changeCollapsed"
         />
       </TheHeader>
