@@ -56,7 +56,7 @@ export default {
     },
     head() {
       return {
-        title: "Hệ thống quản lý công ty Lộc Phát Bio Plastics"
+        title: "Trang quản lý dịch vụ Nhân Hòa"
       };
     },
     data() {

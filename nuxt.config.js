@@ -29,13 +29,20 @@ export default {
         background: 'white'
     },
 
-    mode: 'spa',
+    ssr: false,
 
     /*
     ** Global CSS - https://nuxtjs.org/guides/features/configuration#pre-processors
     */
     css: [
-        '~/assets/main.css'
+        '~/assets/main.css',
+        '~/assets/fonts/font-awesome5-pro/css/all.min.css'
+    ],
+    script:[
+    {
+        src:'~/assets/fonts/font-awesome5-pro/js/all.min.js',
+        type: "text/javascript"
+    }
     ],
 
     /*
@@ -90,14 +97,18 @@ export default {
         htmlAttrs: {
             class: 'htmlAttrs'
         },
-        title: "Hệ thống quản lý công ty Lộc Phát Bio Plastics",
+        title: "Trang quản lý dịch vụ Nhân Hòa ",
         meta: [
-            { title: "Hệ thống quản lý công ty Lộc Phát Bio Plastics"},
+            { title: "Trang quản lý dịch vụ Nhân Hòa"},
             { charset: 'utf-8' },
             { name: 'viewport', content: 'width=device-width, initial-scale=1' },
             { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
         ],
-        link: [{ rel: 'icon', type: 'image/x-icon', href: '/fav-logo.jpg' }],
+        link: [
+            { rel: 'icon', type: 'image/x-icon', href: '/fav-logo.png' },
+            {rel:'stylesheet', href:'https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap'}
+        ],
+        
     }, 
 
     /*

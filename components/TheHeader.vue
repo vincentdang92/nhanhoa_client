@@ -4,7 +4,7 @@
     <a-menu theme="light" mode="horizontal" :selectable="false" :style="{ lineHeight: '64px', textAlign: 'center' }">
       <slot style="float: left"/>
       <a-menu-item class="title-header">
-      HỆ THỐNG QUẢN LÝ NHÀ MÁY NHỰA LỘC PHÁT
+      Trang quản lý dịch vụ Nhân Hòa
       </a-menu-item>
       <!-- User -->
       <a-menu-item v-if="isAuthenticated" class="the-header__user">
@@ -30,6 +30,33 @@
           </a-menu>
         </a-dropdown>
       </a-menu-item>
+      <!-- FAKE USER-->
+      <a-menu-item v-else class="the-header__user">
+        <a-dropdown>
+          <a class="ant-dropdown-link" href="#">
+            <span class="welcome_name">
+              Xin chào, Nguyễn
+            </span>
+            <span>
+              <img src="~/assets/imgs/user-1.png" />
+            </span>
+          </a>
+          <a-menu slot="overlay">
+            <a-menu-item>
+              <a href="#" @click.prevent="showModalChangeProfile">
+                <a-icon type="profile" class="mr-2" /> Cập nhật profile
+              </a>
+              </a-menu-item>
+              <a-menu-item>
+            
+              <a href="#" @click.prevent="logout">
+                <a-icon type="logout" class="mr-2" /> Đăng xuất
+              </a>
+            </a-menu-item>
+          </a-menu>
+        </a-dropdown>
+      </a-menu-item>
+      
     </a-menu>
     
     <a-modal

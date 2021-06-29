@@ -1,22 +1,27 @@
 <template>
-  <a-layout-sider :trigger="null" collapsible :collapsed="collapsed" :width="230">
+  <a-layout-sider   :collapsed="collapsed"  :style="!collapsed  ? 'width:290px;max-width: 290px;flex: 0 0 290px;min-width: 290px;' : ''" 
+      breakpoint="lg"
+      :collapsed-width="!breakPoint ? 80: 0"
+      @collapse="onCollapse"
+      @breakpoint="onBreakpoint" >
+    <div class="logo" />
     <a-menu
       mode="inline"
-      theme="dark"
+      theme="light"
       :defaultOpenKeys="openKeys"
       :defaultSelectedKeys="[selectedKeys]"
       @select="handleSelectItem"
       style="height: 100%"
     >
-      <n-link to="/" class="the-sider__logo" style="background: #fff">
-        <img src="@/assets/imgs/logo.jpg"/>
-        <!-- <img src="http://locphatbioplastics.com/vi/images/Main_index_images/logo.png" alt /> -->
-      </n-link>
+      <!-- <n-link to="/" class="sidebar_menu__logo">
+        <img src="@/assets/imgs/logo.png"/>
+        
+      </n-link> -->
 
       <template v-for="item in privateMenu">
         <a-menu-item v-if="!item.children" :key="item.key">
-          <a-icon v-if="item.icon" :type="item.icon" />
-          <span>{{item.title}}</span>
+          <i v-if="item.icon" :class="item.icon"> </i>
+           <span>{{ item.title }}</span>
         </a-menu-item>
         <sub-menu v-else :menu-info="item" :key="item.key" />
       </template>
@@ -31,128 +36,56 @@ import TheSiderSubMenu from './TheSiderSubMenu';
 const initialMenu = [
   {
     key: '/',
-    title: 'Dashboard',
+    title: 'Trang chủ',
     configKey:  '',
-    icon: 'dashboard'
+    icon: 'fal fa-home'
   },
   {
-    key: '/users',
-    configKey: 'users',
-    title: 'Quản trị viên',
-    icon: 'cluster',
+    key: '/1',
+    title: 'Nạp tiền',
+    configKey:  '',
+    icon: 'fal fa-money-bill-alt'
   },
   {
-    key: '/employees',
-    configKey: 'employees',
-    title: 'Quản lý nhân viên',
-    icon: 'user',
-  },
-  // {
-  //   key: '/containers',
-  //   configKey: 'containers',
-  //   title: 'Quản lý xe tải',
-  //   icon: 'cluster',
-  // },
-  {
-    key: '/customers',
-    configKey: 'customers',
-    title: 'Quản lý khách hàng',
-    icon: 'cloud',
+    key: '/2',
+    configKey: 'tickets',
+    title: 'Gửi ticket',
+    icon: 'fal fa-tags',
   },
   {
-    key: '/suppliers',
-    configKey: 'suppliers',
-    title: 'Quản lý nhà cung ứng',
-    icon: 'rocket',
-  },
-  {
-    key: '/warehouses',
-    configKey: 'warehouses',
-    title: 'Quản lý kho',
-    icon: 'bank',
+    key: '/3',
+    configKey: 'register_services',
+    title: 'Đăng ký dịch vụ',
+    icon: 'fal fa-tv',
     children : [
       {
-        key: '/warehouses',
-        configKey: 'warehouses',
-        title: 'Danh sách kho',
-        icon: 'unordered-list',
+        key: '/4',
+        configKey: 'menu1',
+        title: 'Đăng ký tên miền',
+        icon: 'fal fa-server',
       },
       {
-        key: '/warehouses/imports',
-        configKey: 'imports',
-        title: 'Nhập kho',
-        icon: 'import',
+        key: '/5',
+        configKey: 'menu2',
+        title: 'Giữ chỗ tên miền',
+        icon: 'fal fa-server',
       },
       {
-        key: '/warehouses/exports',
-        configKey: 'exports',
-        title: 'Xuất kho',
-        icon: 'export',
+        key: '/6',
+        configKey: 'menu3',
+        title: 'Chuyển tên miền',
+        icon: 'fal fa-server',
       },
       {
-        key: '/warehouses/rotations',
-        configKey: 'rotations',
-        title: 'Điều kho',
-        icon: 'swap',
+        key: '/7',
+        configKey: 'menu4',
+        title: 'Thuê hosting',
+        icon: 'fal fa-server',
       },
-      {
-        key: '/warehouses/report',
-        configKey: 'report',
-        title: 'Báo biểu tồn kho',
-        icon: 'dot-chart',
-      }
+      
     ]
   },
-  {
-    key: '/met',
-    configKey: 'met',
-    title: 'Quản lý mã vật tư',
-    icon: 'build',
-    children : [
-      {
-        key: '/products',
-        configKey: 'products',
-        title: 'Mã liệu',
-        icon: 'qrcode',
-      },
-      {
-        key: '/products_2/',
-        configKey: 'products',
-        title: 'Mã màng',
-        icon: 'barcode',
-      },
-      {
-        key: '/products_3/',
-        configKey: 'products',
-        title: 'Mã định hình',
-        icon: 'gold',
-      },
-      {
-        key: '/products_4/',
-        configKey: 'products',
-        title: 'Mã phối phương',
-        icon: 'deployment-unit',
-      },
-      {
-        key: '/tag-one/',
-        configKey: 'tag-one',
-        title: 'Đơn vị tính',
-        icon: 'tag',
-      },
-      {
-        key: '/product_others/',
-        configKey: 'products',
-        title: 'Sản phẩm khác',
-        icon: 'number',
-      }
-    ]
-  },
-  // {
-  //   key: '/purchase-order',
-  //   configKey: 'purchase-order',
-  //   title: 'Quản lý mua hàng',
-  //   icon: 'container',
-  // }
+  
 
 
 ];
@@ -168,7 +101,8 @@ export default {
 
   data() {
     return {
-      menu: Object.freeze(initialMenu)
+      menu: Object.freeze(initialMenu),
+      breakPoint:false
     };
   },
 
@@ -197,11 +131,27 @@ export default {
     handleSelectItem({ item, key, selectedKeys }) {
       const route = selectedKeys.reverse().join('');
       this.$router.push(route);
-    }
+    },
+    onCollapse(collapsed, type) {
+      // this.$store.dispatch("menu/changeMenu", !collapsed);
+      console.log('onCollapse',collapsed, type);
+      if(type === 'responsive'){
+        this.breakPoint = true;
+
+      }
+      else{
+        this.breakPoint = false;
+      }
+    },
+    onBreakpoint(broken) {
+      this.breakPoint = broken;
+      console.log('onBreakpoint',broken);
+    },
   }
 };
 </script>
 
 <style lang="scss">
-@import '~/assets/scss/components/_the-sider.scss';
+  
+  
 </style>

@@ -1,12 +1,12 @@
 <template functional>
   <a-sub-menu :key="props.menuInfo.key">
     <span slot="title">
-      <a-icon v-if="props.menuInfo.icon" :type="props.menuInfo.icon" />
+      <i v-if="props.menuInfo.icon" :class="props.menuInfo.icon" > </i>
       <span>{{ props.menuInfo.title }}</span>
     </span>
     <template v-for="item in props.menuInfo.children">
       <a-menu-item v-if="!item.children" :key="item.key">
-        <a-icon v-if="item.icon" :type="item.icon" />
+        <i v-if="item.icon" :class="item.icon" ></i>
         <span>{{ item.title }}</span>
       </a-menu-item>
       <sub-menu v-else :key="item.key" :menu-info="item" />

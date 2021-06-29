@@ -1,6 +1,6 @@
 # nuxt-sale-app
 
-Hệ thống quản lý công ty Lộc Phát Bio Plastics
+Trang quản lý dịch vụ Nhân Hòa
 
 ## Build Setup
 

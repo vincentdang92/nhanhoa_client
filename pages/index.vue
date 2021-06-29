@@ -1,6 +1,6 @@
 <template>
     <a-row type="flex" justify="start">
-      Trang quản trị
+      <p>content</p>
     </a-row>
 </template>
 
