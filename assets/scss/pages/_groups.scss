@@ -1,0 +1,24 @@
+.ant-btn-success {
+    color: #4cae4c;
+    border-color: #4cae4c;
+}
+
+button, .ant-tag {
+    margin-bottom: 5px;
+}
+main {
+    min-height: auto !important;
+}
+.group-account {
+    margin-right: 5px;
+}
+.col-group-show {
+    float: left;
+    margin-bottom: 10px;
+}
+.col_group_add_action {
+    & > button {
+        float: left;
+    }
+    margin-bottom: 10px;
+}

@@ -1,0 +1,24 @@
+.ant-form.form-auth-custom {
+    width: 540px;
+    max-width: 100%;
+    padding: 30px;
+    margin: 50vh auto 0;
+    transform: translate(0,-50%);
+    background-color: #fff;
+    .login-form-button {
+        width: 100%;
+    }
+    .login-form-forgot {
+        float: right;
+    }
+}
+
+.form-auth__title {
+    margin-bottom: 20px;
+}
+.ant-checkbox-wrapper{
+    float: left;
+}
+.ant-layout {
+    height: 100vh;
+}

@@ -1,0 +1,28 @@
+.ant-layout {
+    height: auto;
+}
+.img-delivery {
+    width: 100%;
+    height: auto;
+}
+.delivery-accounts{
+    list-style-type: none;
+    padding: 0;
+}
+.delivery-accounts > li{
+    display: inline-block;
+    margin-right: 15px;
+}
+.delivery-detail .ant-form-item-label {
+    text-align: left;
+    font-weight: bold;
+}
+.delivery-detail .ant-form-item {
+    margin-bottom: 5px;
+}
+.padding-left-10{
+    padding-left: 10px;
+}
+.btn-detail-push{
+    margin-bottom: 5px;
+}

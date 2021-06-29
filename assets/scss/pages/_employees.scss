@@ -1,0 +1,9 @@
+.col_employees_add_action {
+    & > button {
+        float: left;
+    }
+    margin-bottom: 10px;
+}
+.ant-btn-user-edit, ant-btn-user-delete{
+    margin: 0px 2px;
+}

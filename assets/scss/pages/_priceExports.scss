@@ -1,0 +1,120 @@
+.head-printer {
+  td {
+    text-align: left;
+    div {
+      display: block;
+      border-bottom:1px solid rgb(24, 144, 255);
+      letter-spacing: 1.5px;
+      p {
+        font-size: 14px;
+        span {
+          color:  rgb(24, 144, 255);
+          font-size: 16px;
+          width: auto;
+        }
+      }
+    }
+    p {
+      font-size: 11px;
+      padding:0px;
+      margin:0px;
+      span {
+        display:inline-block;
+        width: 28px;
+        &.tel{
+          margin-left: 80px;
+        }
+      }
+      text-align: left;
+    }
+    &.info-company{
+      width: 324px;
+      padding-right: 20px;
+    }
+  }
+  .title {
+    font-size: 18px;
+    img{
+      margin-bottom: 3px;
+    }
+  }
+}
+.tb-detail {
+  width: 740px;
+  thead{
+    th {
+      font-size: 14px;
+      font-weight: bold;
+    }
+  }
+  tfoot{
+    text-align: left;
+    min-height: 80px;
+    td{
+      height: 80px;
+      padding: 10px;
+    }
+  }
+  .date{
+    text-align: left;
+    font-size: 12px;
+    span{
+      display: inline-block;
+      width: 20px;
+      text-align: right;
+      padding: 0px 4px;
+    }
+  }
+}
+.tb-option {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  width: 700px;
+  text-align: left;
+  span {
+    display: inline-block;
+    width: 60px;
+  }
+  .option-sub {
+    td {
+     padding-left: 20px;
+    }
+  }
+  .option-ma{
+    td {
+      padding-top: 10px;
+    }
+  }
+}
+.tb-confirm {
+  width: 800px;
+  text-align: left;
+  font-weight: bold;
+}
+@media print{
+  .hidden-print {
+    visibility: hidden;
+  }
+  @page { 
+    /* switch to landscape */ 
+    size: A5 landscape; 
+    /* set page margins */ 
+    margin: 0; 
+  }
+
+  /* margin on left page */
+  @page :left {
+
+  }
+
+  /* margin on right page */
+  @page :right {
+  }
+
+  /* top margin on first page */
+  @page :first {  
+  }
+
+  @page :blank  {  
+  }
+}
