@@ -36,7 +36,8 @@ export default {
     */
     css: [
         '~/assets/main.css',
-        '~/assets/fonts/font-awesome5-pro/css/all.min.css'
+        '~/assets/fonts/font-awesome5-pro/css/all.min.css',
+        '~/assets/material-style.css'
     ],
     script:[
     {
@@ -106,7 +107,7 @@ export default {
         ],
         link: [
             { rel: 'icon', type: 'image/x-icon', href: '/fav-logo.png' },
-            {rel:'stylesheet', href:'https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap'}
+            {rel:'stylesheet', href:'https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap'},
         ],
         
     }, 

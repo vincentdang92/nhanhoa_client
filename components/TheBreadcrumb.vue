@@ -1,54 +1,68 @@
 <template>
-  <a-breadcrumb style="margin: 5px" :routes="routes">
-    <template slot="itemRender" slot-scope="{route, params, routes, paths}">
-      <span v-if="routes.indexOf(route) === routes.length - 1">{{route.breadcrumbName}}</span>
-      <n-link v-else :to="`${basePath}/${paths.join('/')}`">{{route.breadcrumbName}}</n-link>
-    </template>
-  </a-breadcrumb>
+  <div class="ant-page-header custom_pageheader">
+    <a-breadcrumb separator=">" :routes="routes">
+      <template slot="itemRender" slot-scope="{route, params, routes, paths}">
+        
+        <span v-if="routes.indexOf(route) === routes.length - 1">
+          <i v-if="route.icon" :class="route.icon"></i>
+          {{route.breadcrumbName}}
+        </span>
+        <router-link v-else :to="route.path">
+          <i v-if="route.icon" :class="route.icon"></i>
+          {{route.breadcrumbName}}
+        </router-link>
+      </template>
+    </a-breadcrumb>
+   </div>
 </template>
 
 <script>
 export default {
   data() {
     return {
-      basePath: ``,
       routesData: [
         {
-          path: "",
-          breadcrumbName: "Dashboard"
+          path: "/",
+          breadcrumbName: "Trang chủ"
         },
         {
-          path: "users",
-          breadcrumbName: "Quản trị viên"
+          path: "addfunds",
+          breadcrumbName: "Nạp tiền"
         },
         {
-          path: "accounts",
-          breadcrumbName: "Quản lý tài khoản"
+          path: "supports",
+          breadcrumbName: "Hỗ trợ",
+          
         },
         {
-          path: "notifications",
-          breadcrumbName: "Thông báo"
+          path: 'add-ticket',
+          breadcrumbName: 'Gửi ticket',
         },
         {
-          path: "groups",
-          breadcrumbName: "Quản lý nhóm"
+          path: 'domain-register',
+          breadcrumbName: 'Đăng ký tên miền',
         },
       ]
     };
   },
-
   computed: {
     routes() {
       const currentPath = this.$route.path;
-      const currentPathData = this.routesData.reduce((acc, cur) => {
+      
+      //console.log(currentPath.split('/'));
+      var currentPathData = this.routesData.reduce((acc, cur) => {
         const index = currentPath.split('/').indexOf(cur.path);
         if (index > 0) {
           acc[index - 1] = cur;
         }
         return acc;
       }, []);
-
-      return currentPathData
+      // currentPathData.filter((item) => {
+      //   if( item.path === 'supports'  ){
+      //     item.path = '/'
+      //   }
+      // });
+      return [{breadcrumbName: 'Trang chủ', path: '/', icon:'fas fa-home'},...currentPathData]
     }
   }
 };

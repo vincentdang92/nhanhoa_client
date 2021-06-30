@@ -1,17 +1,17 @@
 <template>
-  <a-layout-sider   :collapsed="collapsed"  :style="!collapsed  ? 'width:290px;max-width: 290px;flex: 0 0 290px;min-width: 290px;' : ''" 
+  <a-layout-sider class=""   :collapsed="collapsed"  :style="!collapsed  ? 'width:290px;max-width: 290px;flex: 0 0 290px;min-width: 290px;' : ''" 
       breakpoint="lg"
       :collapsed-width="!breakPoint ? 80: 0"
       @collapse="onCollapse"
       @breakpoint="onBreakpoint" >
-    <div class="logo" />
+      <div class="logo"></div>
     <a-menu
       mode="inline"
       theme="light"
       :defaultOpenKeys="openKeys"
       :defaultSelectedKeys="[selectedKeys]"
       @select="handleSelectItem"
-      style="height: 100%"
+      style="height: 100%;"
     >
       <!-- <n-link to="/" class="sidebar_menu__logo">
         <img src="@/assets/imgs/logo.png"/>
@@ -39,50 +39,88 @@ const initialMenu = [
     key: '/',
     title: 'Trang chủ',
     configKey:  '',
-    icon: 'fal fa-home'
+    icon: 'fas fa-home'
   },
   {
-    key: '/1',
+    key: '/addfunds',
     title: 'Nạp tiền',
     configKey:  '',
-    icon: 'fal fa-money-bill-alt'
+    icon: 'fas fa-money-bill-alt'
   },
   {
-    key: '/2',
+    key: '/supports/add-ticket',
     configKey: 'tickets',
     title: 'Gửi ticket',
-    icon: 'fal fa-tags',
+    icon: 'fas fa-tags',
   },
   {
-    key: '/3',
-    configKey: 'register_services',
+    key: 'services-register',
+    configKey: 'services_register',
     title: 'Đăng ký dịch vụ',
-    icon: 'fal fa-tv',
+    icon: 'fas fa-tv',
     children : [
       {
-        key: '/4',
+        key: '/domain-register',
         configKey: 'menu1',
         title: 'Đăng ký tên miền',
-        icon: 'fal fa-server',
+        icon: 'fas fa-globe',
       },
       {
-        key: '/5',
+        key: '/domain-transfer',
         configKey: 'menu2',
-        title: 'Giữ chỗ tên miền',
-        icon: 'fal fa-server',
-      },
-      {
-        key: '/6',
-        configKey: 'menu3',
         title: 'Chuyển tên miền',
-        icon: 'fal fa-server',
+        icon: 'fas fa-globe',
+      },
+      
+    ]
+  },
+  {
+    key: 'orders',
+    configKey: 'orders',
+    title: 'Danh sách đơn hàng',
+    icon: 'fas fa-file-spreadsheet',
+    children : [
+      {
+        key: 'orders/queue',
+        configKey: 'queue',
+        title: 'Đang chờ',
+        icon: 'fas fa-globe',
       },
       {
-        key: '/7',
-        configKey: 'menu4',
-        title: 'Thuê hosting',
-        icon: 'fal fa-server',
+        key: 'pending',
+        configKey: 'pending',
+        title: 'Đang khởi tạo',
+        icon: 'fas fa-globe',
       },
+      
+      
+    ]
+  },
+  {
+    key: 'supports',
+    configKey: 'supports',
+    title: 'Hỗ trợ',
+    icon: 'fas fa-comments',
+    children : [
+      {
+        key: '/pending',
+        configKey: 'pending',
+        title: 'Đang chờ',
+        icon: 'fas fa-globe',
+      },
+      {
+        key: '/processing',
+        configKey: 'processing',
+        title: 'Đang xử lý',
+        icon: 'fas fa-globe',
+      },
+      {
+        key: '/replied',
+        configKey: 'replied',
+        title: 'Đã trả lời',
+        icon: 'fas fa-exchange',
+      },
+      
       
     ]
   },
@@ -109,6 +147,7 @@ export default {
 
   computed: {
     selectedKeys() {
+      console.log(this.$route.path);
       return this.$route.path;
     },
 
