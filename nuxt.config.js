@@ -1,16 +1,25 @@
+const { config } = require("dotenv")
+
 module.exports =  {
     buildDir: 'nuxt-dist',
     /*
     ** Activate components - https://nuxtjs.org/guides/directory-structure/components#components-module
     */
     components: true,
-
+    publicRuntimeConfig: {
+        BASE_URL: 'http://localhost',
+        PORT: 3000,
+    },
+    privateRuntimeConfig: {
+        RECAPTCHA_SITE_KEY: '6Ley0WkbAAAAAN5yJtm59kpHILNSvxrAdTDkrt5C',
+    },
     /*
     ** env
     */
     env: {
-        BASE_URL: process.env.BASE_URL,
-        PORT: process.env.PORT,
+        
+       
+        
     },
 
     server: {
@@ -67,8 +76,15 @@ module.exports =  {
         '@nuxt/http',
         '@nuxtjs/axios',
         '@nuxtjs/style-resources',
-    ],
+        '@nuxtjs/recaptcha'
 
+    ],
+    recaptcha: {
+        siteKey: '6Ley0WkbAAAAAN5yJtm59kpHILNSvxrAdTDkrt5C',    // Site key for requests
+        hideBadge: false,
+        version: 2,     // Version
+        size: 'normal'        // Size: 'compact', 'normal', 'invisible' (v2)
+    },
     /*
     ** Axios module configuration
     ** See https://axios.nuxtjs.org/options
