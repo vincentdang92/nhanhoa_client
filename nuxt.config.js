@@ -1,4 +1,4 @@
-export default {
+module.exports =  {
     buildDir: 'nuxt-dist',
     /*
     ** Activate components - https://nuxtjs.org/guides/directory-structure/components#components-module
@@ -22,21 +22,19 @@ export default {
         color: 'blue',
         height: '1px'
     },
-
     loadingIndicator: {
         name: 'circle',
         color: '#3B8070',
         background: 'white'
     },
-
     ssr: false,
-
     /*
     ** Global CSS - https://nuxtjs.org/guides/features/configuration#pre-processors
     */
     css: [
         '~/assets/main.css',
-        '~/assets/fonts/font-awesome5-pro/css/all.min.css'
+        '~/assets/fonts/font-awesome5-pro/css/all.min.css',
+        '~/assets/material-style.css'
     ],
     script:[
     {
@@ -106,7 +104,7 @@ export default {
         ],
         link: [
             { rel: 'icon', type: 'image/x-icon', href: '/fav-logo.png' },
-            {rel:'stylesheet', href:'https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap'}
+            {rel:'stylesheet', href:'https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap'},
         ],
         
     }, 
@@ -136,6 +134,7 @@ export default {
                     ]
                 ]
             }
-        }
+        },
+        publicPath: 'client/',
     }
 }

@@ -1,10 +1,10 @@
 <template>
-  <a-layout-header class="the-header" style="background: #fff; padding: 0">
+  <a-layout-header class="the-header" style="background: #fff; padding: 0;" >
     
     <a-menu theme="light" mode="horizontal" :selectable="false" :style="{ lineHeight: '64px', textAlign: 'center' }">
       <slot style="float: left"/>
       <a-menu-item class="title-header">
-      Trang quản lý dịch vụ Nhân Hòa
+      
       </a-menu-item>
       <!-- User -->
       <a-menu-item v-if="isAuthenticated" class="the-header__user">
