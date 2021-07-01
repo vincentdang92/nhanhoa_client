@@ -1,7 +1,7 @@
 <template>
   <a-layout id="components-layout-demo-custom-trigger">
     <TheSider collapsible :collapsed="collapsed" />
-    <a-layout>
+    <a-layout :class="{ 'has_collapse': collapsed }">
       <TheHeader>
         <a-icon
           class="trigger"

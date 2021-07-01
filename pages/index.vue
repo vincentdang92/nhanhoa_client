@@ -42,7 +42,7 @@
               <div class="card-body">
                   <div class="d-flex no-block align-items-center">
                       <div>
-                          <span class="text-info  display-6"><i class="icon_xl fas fa-file-invoice"></i></span>
+                        <span class="text-info  display-6"><i class="icon_xl fas fa-file-invoice"></i></span>
                       </div>
                       <div class="ml-auto">
                           <h2 class="text-info">290</h2>
@@ -54,7 +54,7 @@
         </div>
       </a-col>
       <a-col class="gutter-row" :span="9">
-        <div class="gutter-box">
+        <div v-for="i in 2" :key="i" class="gutter-box">
           <div class="card">
               <div class="card-body text-center">
                   <h4 class="card-title">Thông tin cá nhân</h4>

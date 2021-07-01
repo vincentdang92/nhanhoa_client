@@ -4,7 +4,11 @@
       :collapsed-width="!breakPoint ? 80: 0"
       @collapse="onCollapse"
       @breakpoint="onBreakpoint" >
-      <div class="logo"></div>
+    <div class="logo">
+      <img class="logo_large" src="~/assets/imgs/logo.png" />
+      <img class="logo_small" src="~/assets/imgs/logo_small.png" />
+     
+    </div>
     <a-menu
       mode="inline"
       theme="light"

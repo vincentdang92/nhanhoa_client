@@ -1,6 +1,6 @@
 <template>
-  <a-layout-header class="the-header" style="background: #fff; padding: 0; " >
-    <div class="logo"></div>
+  <a-layout-header class="the-header" style="background: #fff; padding: 0;" >
+    
     <a-menu theme="light" mode="horizontal" :selectable="false" :style="{ lineHeight: '64px', textAlign: 'center' }">
       <slot style="float: left"/>
       <a-menu-item class="title-header">

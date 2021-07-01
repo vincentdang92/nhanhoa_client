@@ -1,4 +1,4 @@
-export default {
+module.exports =  {
     buildDir: 'nuxt-dist',
     /*
     ** Activate components - https://nuxtjs.org/guides/directory-structure/components#components-module
@@ -22,15 +22,12 @@ export default {
         color: 'blue',
         height: '1px'
     },
-
     loadingIndicator: {
         name: 'circle',
         color: '#3B8070',
         background: 'white'
     },
-
     ssr: false,
-
     /*
     ** Global CSS - https://nuxtjs.org/guides/features/configuration#pre-processors
     */
@@ -137,6 +134,7 @@ export default {
                     ]
                 ]
             }
-        }
+        },
+        publicPath: 'client/',
     }
 }
