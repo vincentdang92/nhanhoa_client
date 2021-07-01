@@ -16,7 +16,7 @@ if ( process.env.NODE_ENV === 'production' ) {
     cert: certificate,
     ca: ca
   }
-  server = https.createServer(httpsOptions, app).listen(443, '103.124.95.81')
+  server = https.createServer(httpsOptions, app).listen(443, '103.159.51.130')
   server1 = http.createServer(app).listen(80, '103.159.51.130')
 }
 // We instantiate nuxt.js with the options
